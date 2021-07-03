@@ -32,16 +32,20 @@ function printTasks(taskArray){
     for (let task of taskArray){
         if(task.is_done === false){
             $('#toDoList').append(`
-            <li class="list-group-item" data-id="${task.id}">${task.item}
-            <button class="btn btn-success rounded-0" data-id="${task.id}">Done</button>
-            <button class="btn btn-danger rounded-0" data-id="${task.id}">Trash</button>
-            </li> 
+            <section class="row row-cols-lg justify-content-lg-center">
+                <li class="list-group-item col-lg-8" data-id="${task.id}">${task.item}
+                    <button class="btn btn-success rounded-0 col-lg-3 float-end" data-id="${task.id}">Done</button>
+                    <button class="btn btn-danger rounded-0 col-lg-1 float-end" data-id="${task.id}">Trash</button>
+                </li> 
+            </section
             `);
         } else if (task.is_done === true){
             $('#toDoList').append(`
-            <li class="list-group-item" data-id="${task.id}">
-            ${task.item} <button class="btn btn-danger rounded-0" data-id="${task.id}">Trash</button>
-            </li> 
+            <section class="row justify-content-lg-center">
+                <li class="list-group-item col-lg-8" data-id="${task.id}">${task.item}
+                        <button class="btn btn-danger rounded-0 col-lg-1 float-end" data-id="${task.id}">Trash</button>
+                </li> 
+            </section>
             `);
         }
     }
@@ -90,10 +94,10 @@ function deleteTask(){
 }
 
 /*
-[] Create Task 
-[] Show all tasks
-[] Refresh after adding task
-[] Task can be completed
-[] Task can be deleted
+[x] Create Task 
+[x] Show all tasks
+[x] Refresh after adding task
+[x] Task can be completed
+[x] Task can be deleted
 [] When task is complete, change visual
 */
