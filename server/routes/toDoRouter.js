@@ -35,7 +35,7 @@ router.post('/', (req,res) => {
 router.put('/:id', (req,res) => {
     const listItemId = req.params.id;
     let queryText = `
-    UPDATE list SET is_done = !is_done WHERE id = $1;
+    UPDATE list SET is_done = true WHERE id = $1;
     `;
     pool.query(queryText, [listItemId])
     .then(dbResponse => {
