@@ -32,4 +32,36 @@ router.post('/', (req,res) => {
     });
 });
 
+router.put('/:id', (req,res) => {
+    const listItemId = req.params.id;
+    let queryText = `
+    UPDATE list SET is_done = true WHERE id = $1;
+    `;
+    pool.query(queryText, [listItemId])
+    .then(dbResponse => {
+        console.log('Updated is_done status:', dbResponse.rowCount);
+        res.sendStatus(202);
+    })
+    .catch(err => {
+        console.log('Error updating list', err);
+        res.sendStatus(500);
+    });
+});
+
+router.delete('/:id', (req,res) => {
+    const listItemId = req.params.id;
+    let queryText = `
+    DELETE FROM list WHERE id = $1;
+    `;
+    pool.query(queryText, [listItemId])
+    .then(dbResponse => {
+        console.log('Deleted row:', dbResponse.rowCount);
+        res.sendStatus(200);
+    })
+    .catch(err => {
+        console.log('Error deleting list item', err);
+        res.sendStatus(500);
+    });
+});
+
 module.exports = router;
