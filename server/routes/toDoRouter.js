@@ -19,17 +19,17 @@ router.get('/', (req,res) => {
 router.post('/', (req,res) => {
     const newToDo = req.body;
     const queryText = `
-    INSERT INTO list ('item', 'is_done')
+    INSERT INTO list (item, is_done)
     VALUES ($1, $2);
     `;
     pool.query(queryText, [newToDo.item, newToDo.isDone])
-    .then(dbResponse => {
+    .then( dbResponse => {
         res.sendStatus(201);
     })
-    .catch(error => {
+    .catch( error => {
         console.log('Could not create new to-do.');
         res.sendStatus(500);
-    })
+    });
 });
 
 module.exports = router;
