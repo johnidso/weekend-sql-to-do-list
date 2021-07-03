@@ -41,8 +41,8 @@ function printTasks(taskArray){
             `);
         } else if (task.is_done === true){
             $('#toDoList').append(`
-            <section class="row justify-content-lg-center">
-                <li class="list-group-item col-lg-8" data-id="${task.id}">${task.item}
+            <section class="row row-cols-lg justify-content-lg-center">
+                <li class="list-group-item-success col-lg-8" data-id="${task.id}"><s>${task.item}</s>
                         <button class="btn btn-danger rounded-0 col-lg-1 float-end" data-id="${task.id}">Trash</button>
                 </li> 
             </section>
