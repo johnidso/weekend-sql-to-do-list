@@ -45,7 +45,7 @@ function printTasks(taskArray){
             <section class="row row-cols-lg justify-content-lg-center">
                 <li class="list-group-item-success col-md-8" data-id="${task.id}">
                     <s>${task.item}</s>
-                    <button class="btn btn-danger rounded-0 col-md-1 float-end" data-id="${task.id}">Trash</button>
+                    <button class="btn btn-danger rounded-0 col-md float-end" data-id="${task.id}"><i class="fas fa-trash"></i></button>
                 </li> 
             </section>
             `);
@@ -101,5 +101,5 @@ function deleteTask(){
 [x] Refresh after adding task
 [x] Task can be completed
 [x] Task can be deleted
-[] When task is complete, change visual
+[x] When task is complete, change visual
 */
