@@ -91,7 +91,8 @@ function deleteTask(){
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
+        })
+        .then((result) => {
         if (result.isConfirmed) {
             $.ajax({
                 method:'DELETE',
@@ -103,13 +104,13 @@ function deleteTask(){
             .catch(error => {
                 alert('Error deleting record', error);
             });
-          Swal.fire(
+            Swal.fire(
             'Deleted!',
             'Your task has been deleted.',
             'success'
-          )
+            )
         }
-      })
+    });
 }
 
 /*
