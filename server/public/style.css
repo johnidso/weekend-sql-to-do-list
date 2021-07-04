@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: helvetica,arial,sans-serif;
 }
 
 header {
@@ -23,4 +23,9 @@ li {
 section {
     margin-left: 2% !important;
     margin-right: 2% !important;
+}
+
+.taskText {
+    height: 15px;
+    width: 15px;
 }
