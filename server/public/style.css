@@ -12,4 +12,11 @@ header {
 
 li {
     list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+section {
+    margin-left: 2% !important;
+    margin-right: 2% !important;
 }
