@@ -10,7 +10,11 @@ function onReady(){
 function addTask() {
     let taskIn = $('#toDoIn').val();
     if(!taskIn){
-        alert('Please add a task description.');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please add a task to submit.',
+          })
     } else{
         $.ajax({
             method: 'POST',
