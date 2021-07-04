@@ -33,7 +33,8 @@ function printTasks(taskArray){
         if(task.is_done === false){
             $('#toDoList').append(`
             <section class="row row-cols-lg justify-content-lg-center">
-                <li class="list-group-item col-md-8" data-id="${task.id}">${task.item}
+                <li class="list-group-item col-md-8" data-id="${task.id}">
+                ${task.item}
                     <button class="btn btn-success rounded-0 col-md-3 float-end" data-id="${task.id}">Done</button>
                     <button class="btn btn-danger rounded-0 col-md float-end" data-id="${task.id}">Trash</button>
                 </li> 
