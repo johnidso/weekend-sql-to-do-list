@@ -1,3 +1,5 @@
+-- db name: weekend-to-do-app
+
 CREATE TABLE "list" (
 	"id" serial primary key,
 	"item" varchar(180) not null,
