@@ -41,10 +41,12 @@ function printTasks(taskArray){
             </section
             `);
         } else if (task.is_done === true){
+            let taskDateTime = moment(task.task_time).format('MMMM Do YYYY, h:mm:ss a');
+            console.log(taskDateTime);
             $('#toDoList').append(`
             <section class="row row-cols-lg justify-content-lg-center">
                 <li class="list-group-item-success col-md-8" data-id="${task.id}">
-                    <s>${task.item}</s>
+                    <s>${task.item}</s> - completed ${taskDateTime}
                     <button class="btn btn-danger rounded-0 col-md float-end" data-id="${task.id}"><i class="fas fa-trash"></i></button>
                 </li> 
             </section>
